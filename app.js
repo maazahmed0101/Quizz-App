@@ -80,6 +80,15 @@ const option2 = document.querySelector('.option2');
 const option3 = document.querySelector('.option3');
 let button = document.querySelector('.button')
 const names = document.getElementsByName('input')
+let resulNextHtml = document.querySelector('.resulNextHtml')
+function next(){
+    let body = document.querySelector('body')
+   let newHtml = document.createElement('div')
+   body.innerHTML = `<h1>your result is : ${score} </h1>`
+   
+   body.append(newHtml)
+}
+
 
 // let opc1dec = option1.innerHTML = `hi`
 // let opc2dec = option2.innerHTML = `hi`
@@ -95,15 +104,19 @@ const names = document.getElementsByName('input')
 function clicking() {
 
     if (index === questions.length) {
-        Swal.fire({
-            title: "Done!",
-            text: `Score: ${score}`,
-            icon: "success",
-            background: "#1e1e2f",
-            color: "#fff",
-            confirmButtonColor: "#764ba2"
-        });
-        return;
+        // function clicking(){
+            // return `<a href="result.html"></a>`
+            // }
+            // Swal.fire({
+                //     title: "Done!",
+                //     text: `Score: ${score}`,
+                //     icon: "success",
+                //     background: "#1e1e2f",
+                //     color: "#fff",
+                //     confirmButtonColor: "#764ba2"
+                
+                // });
+                return  next()
     }
 
 
