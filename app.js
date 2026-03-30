@@ -72,3 +72,80 @@ const questions = [
         correctAnswer: "Both <strong> and <b>",
     },
 ];
+let index = 0;
+let score = 0;
+const inputing = document.querySelector('.inputing')
+const option1 = document.querySelector('.option1');
+const option2 = document.querySelector('.option2');
+const option3 = document.querySelector('.option3');
+let button = document.querySelector('.button')
+const names = document.getElementsByName('input')
+
+// let opc1dec = option1.innerHTML = `hi`
+// let opc2dec = option2.innerHTML = `hi`
+// let opc3dec = option3.innerHTML = `hi`
+
+// if (inputname[i].checked) {
+//     console.log(inputname);
+//     let inputname = names
+// console.log(inputname.value);
+
+
+
+function clicking() {
+
+    if (index === questions.length) {
+        Swal.fire({
+            title: "Done!",
+            text: `Score: ${score}`,
+            icon: "success",
+            background: "#1e1e2f",
+            color: "#fff",
+            confirmButtonColor: "#764ba2"
+        });
+        return;
+    }
+
+
+    for (let i = 0; i < names.length; i++) {
+        if (names[i].checked) {
+            // console.log(names);
+            let one = names[i].value
+            let correctAnswer = questions[index - 1]['correctAnswer']
+            let user = questions[index - 1][`option${one}`]
+            let result = '';
+            if (user === correctAnswer) {
+                score += 10
+            }
+
+            console.log(score);
+
+            names[i].checked = false
+            console.log(result);
+
+        }
+        // let values = names.values
+        // console.log(values);
+
+        // button.disabled = false
+    }
+
+    // console.log(questions[0]['option1']);
+
+    // for (let i = 0; i < questions.length - 1; i++) {
+    inputing.innerHTML = questions[index]['question']
+    option1.innerText = questions[index]['option1']
+    option2.innerText = questions[index]['option2']
+    option3.innerText = questions[index]['option3']
+    // }
+    index++
+    button.disabled = true;
+
+}
+clicking()
+
+function enable() {
+    // button.disabled = true;
+    button.disabled = true;
+    button.disabled = false
+}
