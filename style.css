@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -29,7 +29,7 @@ body {
 }
 
 /* options */
-label {
+/* label {
     display: block;
     background: #f1f1f1;
     padding: 12px;
@@ -53,13 +53,13 @@ span {
 }
 
 /* selected effect */
-input[type="radio"]:checked + span {
+/* input[type="radio"]:checked + span {
     color: #764ba2;
     font-weight: bold;
 }
 
 /* button */
-.button {
+/* .button {
     width: 100%;
     padding: 12px;
     border: none;
@@ -68,14 +68,50 @@ input[type="radio"]:checked + span {
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
-}
+    transition: 0.3s; */
+/* }  */
 
-.button:hover {
+/* .button:hover {
     background: #5a3790;
 }
 
 .button:disabled {
     background: gray;
-    cursor: not-allowed;
+    cursor: not-allowed; */
+/* }  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 40px;
+}
+.inputing{
+    font-size: 40px;
+    font-family: cursive;
+    padding-bottom: 20px;
+}
+.opt{
+    font-family: cursive;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7rem;
+}
+.button{
+    margin-top: 175px;
+    padding: 12px 20PX;
+    border-radius: 12px;
+}
+.resulting {
+    background-color: pink;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: cursive;
+    font-weight: bolder;
+    font-size: 75px;
+    height: 100vh;
 }

@@ -84,7 +84,8 @@ let resulNextHtml = document.querySelector('.resulNextHtml')
 function next(){
     let body = document.querySelector('body')
    let newHtml = document.createElement('div')
-   body.innerHTML = `<h1>your result is : ${score} </h1>`
+   body.innerHTML = `<h1 class = resulting >your result is : ${score} </h1>
+   <button>Start Again</button>`
    
    body.append(newHtml)
 }
@@ -146,7 +147,7 @@ function clicking() {
     // console.log(questions[0]['option1']);
 
     // for (let i = 0; i < questions.length - 1; i++) {
-    inputing.innerHTML = questions[index]['question']
+    inputing.innerText = questions[index]['question']
     option1.innerText = questions[index]['option1']
     option2.innerText = questions[index]['option2']
     option3.innerText = questions[index]['option3']
