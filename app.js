@@ -1,3 +1,22 @@
+let score = 0;
+let result = '';
+function exis() {
+    if(score < 70){
+        result.textContent = 'you are failed'
+        
+    }else{
+        console.log('you are passed');
+        
+    }
+    
+      if (score < 70) {
+        return result.innerText = 'You are Failed'
+    } else if (score > 70) {
+        return result.innerText ='you are passed'
+    }
+    
+}
+
 const questions = [
     {
         question: "What does HTML stand for?",
@@ -72,8 +91,8 @@ const questions = [
         correctAnswer: "Both <strong> and <b>",
     },
 ];
+let hi = result
 let index = 0;
-let score = 0;
 const inputing = document.querySelector('.inputing')
 const option1 = document.querySelector('.option1');
 const option2 = document.querySelector('.option2');
@@ -81,49 +100,31 @@ const option3 = document.querySelector('.option3');
 let button = document.querySelector('.button')
 const names = document.getElementsByName('input')
 let resulNextHtml = document.querySelector('.resulNextHtml')
-function next(){
+function next() {
     let body = document.querySelector('body')
-   let newHtml = document.createElement('div')
-   body.innerHTML = `<h1 class = resulting >your result is : ${score} </h1>
-   <button>Start Again</button>`
-   
-   body.append(newHtml)
+    let newHtml = document.createElement('div')
+    body.innerHTML = `<h1 class = resulting >your result is :  ${score} </h1>`
+
+    body.append(newHtml)
 }
 
 
-// let opc1dec = option1.innerHTML = `hi`
-// let opc2dec = option2.innerHTML = `hi`
-// let opc3dec = option3.innerHTML = `hi`
 
-// if (inputname[i].checked) {
-//     console.log(inputname);
-//     let inputname = names
-// console.log(inputname.value);
+
 
 
 
 function clicking() {
+exis()
 
     if (index === questions.length) {
-        // function clicking(){
-            // return `<a href="result.html"></a>`
-            // }
-            // Swal.fire({
-                //     title: "Done!",
-                //     text: `Score: ${score}`,
-                //     icon: "success",
-                //     background: "#1e1e2f",
-                //     color: "#fff",
-                //     confirmButtonColor: "#764ba2"
-                
-                // });
-                return  next()
+    
+        return next()
     }
 
 
     for (let i = 0; i < names.length; i++) {
         if (names[i].checked) {
-            // console.log(names);
             let one = names[i].value
             let correctAnswer = questions[index - 1]['correctAnswer']
             let user = questions[index - 1][`option${one}`]
@@ -132,26 +133,18 @@ function clicking() {
                 score += 10
             }
 
-            console.log(score);
+            // console.log(score);
 
             names[i].checked = false
-            console.log(result);
+            result
 
         }
-        // let values = names.values
-        // console.log(values);
-
-        // button.disabled = false
     }
 
-    // console.log(questions[0]['option1']);
-
-    // for (let i = 0; i < questions.length - 1; i++) {
     inputing.innerText = questions[index]['question']
     option1.innerText = questions[index]['option1']
     option2.innerText = questions[index]['option2']
     option3.innerText = questions[index]['option3']
-    // }
     index++
     button.disabled = true;
 
@@ -159,7 +152,6 @@ function clicking() {
 clicking()
 
 function enable() {
-    // button.disabled = true;
     button.disabled = true;
     button.disabled = false
 }

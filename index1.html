@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Quizz</title>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <h3 class="inputing"></h3>
+        <div class="">
+            <label>
+                <input type="radio" value="1" name="input" onchange="enable()">
+                <span class="option1 opt"></span>
+            </label>
+        </div>
+        <div class="">
+            <label>
+                <input type="radio" value="2" name="input" onchange="enable()">
+                <span class="option2 opt"></span>
+            </label>
+        </div>
+        <div class="">
+            <label>
+                <input type="radio" value="3" name="input" onchange="enable()">
+                <span class="option3 opt"></span>
+            </label>
+        </div>
+        <button onclick='clicking()' onclick="clicking()" disabled class="button">next</button>
+    </div>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

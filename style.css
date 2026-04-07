@@ -83,9 +83,13 @@ span {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 body{
     padding: 40px;
+    background: linear-gradient(45deg , lightPink,skyblue , pink);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .inputing{
     font-size: 40px;
