@@ -1,21 +1,9 @@
+let body = document.querySelector('body')
 let score = 0;
 let result = '';
-function exis() {
-    if(score < 70){
-        result.textContent = 'you are failed'
-        
-    }else{
-        console.log('you are passed');
-        
-    }
-    
-      if (score < 70) {
-        return result.innerText = 'You are Failed'
-    } else if (score > 70) {
-        return result.innerText ='you are passed'
-    }
-    
-}
+let counter = 0;
+let sc = 10
+
 
 const questions = [
     {
@@ -91,7 +79,7 @@ const questions = [
         correctAnswer: "Both <strong> and <b>",
     },
 ];
-let hi = result
+
 let index = 0;
 const inputing = document.querySelector('.inputing')
 const option1 = document.querySelector('.option1');
@@ -100,25 +88,23 @@ const option3 = document.querySelector('.option3');
 let button = document.querySelector('.button')
 const names = document.getElementsByName('input')
 let resulNextHtml = document.querySelector('.resulNextHtml')
-function next() {
-    let body = document.querySelector('body')
-    let newHtml = document.createElement('div')
-    body.innerHTML = `<h1 class = resulting >your result is :  ${score} </h1>`
 
-    body.append(newHtml)
-}
+// body.append(newHtml)
+
+// function opreater(){
 
 
+// }
 
 
 
 
 
 function clicking() {
-exis()
+    exis()
 
     if (index === questions.length) {
-    
+
         return next()
     }
 
@@ -128,15 +114,18 @@ exis()
             let one = names[i].value
             let correctAnswer = questions[index - 1]['correctAnswer']
             let user = questions[index - 1][`option${one}`]
-            let result = '';
+            // let result = '';
             if (user === correctAnswer) {
                 score += 10
+                sc = 11
+                console.log(score);
+
             }
 
             // console.log(score);
 
             names[i].checked = false
-            result
+            // result
 
         }
     }
@@ -155,3 +144,52 @@ function enable() {
     button.disabled = true;
     button.disabled = false
 }
+
+
+
+function exis() {
+    if (score < 70) {
+        result.textContent = 'you are failed'
+    } else {
+        console.log('you are passed');
+    }
+    if (score < 70) {
+        return result.innerText = 'You are Failed'
+    } else if (score > 70) {
+        return result.innerText = 'you are passed'
+    }
+
+}
+function next() {
+    //    return opreater()
+
+    body.innerHTML = `<h1 class =  >your result is :  ${score} </h1> <h1 class=connecting>maaz</h1>`
+    body.className = `final`
+
+    let connecting = document.querySelector('.connecting')
+
+    connecting.innerHTML = score >= 70 ? 'you are passed' : score >= 50 ? 'you are average' : 'You are failed';
+    connecting.className = score >= 70 ? true : score >= 50 ? 'average' : 'false';
+    // if (score < 70) {
+
+    //     connecting.innerText = 'You are failed'
+    // } else {
+    //     connecting.innerHTML = 'you are passed'
+    // }
+    // body.append(newElem)
+
+
+    // let nextingresult = document.querySelector('.nextingresult')
+
+    // nextingresult.innerHTML = `maazahmed`
+    // console.log(nextingresult);
+
+}
+let df = document.querySelector('.df')
+setInterval(() => {
+    if (sc <= 0) {
+        next()
+    }
+    sc--
+    df.innerHTML = `Timer ${sc}`
+}, 999);

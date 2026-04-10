@@ -119,3 +119,32 @@ body{
     font-size: 75px;
     height: 100vh;
 }
+.final{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    flex-direction: column;
+    font-weight: bolder;
+    gap: 30vh;
+    padding-top: 10vh;
+}
+.false{
+    color: red;
+}
+/* .f123{
+    font-weight: bolder;
+    font-size: 500px;
+} */
+
+.average{
+    color: yellow;
+}
+.true{
+    color: white;
+}
+.df{
+    display: flex;
+    flex-direction: row-reverse;
+}
